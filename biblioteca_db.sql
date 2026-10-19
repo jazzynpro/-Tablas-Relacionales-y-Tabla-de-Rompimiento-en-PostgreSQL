@@ -58,6 +58,37 @@ values
 
 select * from libro_autor;
 
+select
+titulo,
+nombre,
+pais,
+anio_publicacion
+from libros
+inner join libro_autor
+on(
+codigo = la_libro_codigo_fk
+)
+inner join autores
+on(
+la_autor_id_fk = id
+);
+
+
+select titulo,
+nombre,
+pais,
+anio_publicacion
+from libros lb
+inner join libro_autor la
+on(
+codigo = la_libro_codigo_fk
+)
+inner join autores aut
+on(
+la_autor_id_fk = id
+);
+
+
 
 
 
