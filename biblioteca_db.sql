@@ -117,7 +117,7 @@ order by la.anio_publicacion desc;
 
 select
 au.id,
-count(lb.codigo) as 'cantidad_libros'
+count(lb.codigo) as "cantidad_libros"
 from libros lb
 inner join libro_autor la
 on(
@@ -130,4 +130,26 @@ au.id = la.la_autor_id_fk
 group by au.id, au.nombre; 
 
 
+alter table libros
+add column precio double precidion;
+
+select * from libros;
+
+update libros set
+precio = 29.99
+where codigo = 'L001';
+
+update libros set
+precio = 9.99
+where codigo = 'L002';
+
+update libros set
+precio = 39.99
+where codigo = 'L003';
+
+update libros set
+precio = 39.99
+where codigo = 'L004';
+
+select * from libros;
 
