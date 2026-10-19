@@ -89,6 +89,16 @@ la_autor_id_fk = id
 );
 
 
+select
+lb.*,
+la.anio_publicacion
+from libros lb
+inner join libro_autor la
+on(
+lb.codigo = la.la_libro_codigo_fk
+)
+where la.anio_publicacion > 2020;
+
 
 
 
