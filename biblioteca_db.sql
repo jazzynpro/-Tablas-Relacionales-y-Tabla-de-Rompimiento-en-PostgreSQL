@@ -131,7 +131,7 @@ group by au.id, au.nombre;
 
 
 alter table libros
-add column precio double precidion;
+add column precio double precio;
 
 select * from libros;
 
