@@ -99,6 +99,7 @@ lb.codigo = la.la_libro_codigo_fk
 )
 where la.anio_publicacion > 2020;
 
+
 select * from autores
 where pais = 'CO';
 
@@ -114,7 +115,19 @@ lb.codigo = la.la_libro_codigo_fk
 order by la.anio_publicacion desc;
 
 
-
+select
+au.id,
+count(lb.codigo) as 'cantidad_libros'
+from libros lb
+inner join libro_autor la
+on(
+lb.codigo = la.la_libro_codigo_fk
+)
+inner join autores au
+on(
+au.id = la.la_autor_id_fk
+)
+group by au.id, au.nombre; 
 
 
 
